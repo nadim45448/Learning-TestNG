@@ -18,10 +18,23 @@ dependencies {
 
     // https://mvnrepository.com/artifact/com.github.javafaker/javafaker
     implementation("com.github.javafaker:javafaker:1.0.2")
+
+    // https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple
+    implementation("com.googlecode.json-simple:json-simple:1.1.1")
 }
 
 test {
     useTestNG(){
+        // Are we providing email and password through terminal
+        if(project.hasProperty("email") && project.hasProperty("password")){
+
+            // if we provide email and password through terminal, system will store provided email and password under email and password key
+            systemProperties.put("email", project.property("email")); // value which we give through terminal : project.property("email")
+            systemProperties.put("password", project.property("password"));
+
+            print(project.property("email"));
+            print(project.property("password"));
+        }
         suites "./src/test/resources/suite.xml"
 
     }
