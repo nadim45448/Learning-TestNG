@@ -42,8 +42,10 @@ test {
             print(project.property("password"));
         }
         suites "./src/test/resources/regressionSuite.xml"
-//        if(project.hasProperty("suiteName")){
-//            systemProperties.put("suiteName",project.property("suiteName"))
+
+//        suites "./src/test/resources/"+systemProperties.get("suiteName")
+//        if (project.hasProperty("suiteName")){
+//            systemProperties.put("suiteName", project.property("suiteName"))
 //        }
 //        suites "./src/test/resources/"+systemProperties.get("suiteName")
 
