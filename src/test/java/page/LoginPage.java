@@ -10,10 +10,10 @@ import java.util.List;
 public class LoginPage {
 
     @FindBy(id = "email")
-    WebElement txtEmail;
+   public WebElement txtEmail;
 
     @FindBy(id = "password")
-    WebElement txtPassword;
+   public WebElement txtPassword;
 
     @FindBy(tagName = "button")
     WebElement btnLogin;
@@ -22,6 +22,9 @@ public class LoginPage {
     List<WebElement> btnProfileIcon;
     @FindBy(css = "[role=menuitem]")
     List<WebElement> btnLogout;
+
+    @FindBy(tagName = "button")
+    public List<WebElement> button; // user info update
 
 
 
